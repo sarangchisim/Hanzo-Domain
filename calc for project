@@ -1,0 +1,93 @@
+#include<stdio.h>
+#include<string.h>
+#include<math.h>
+
+
+double root(double a,double b){
+    double r;
+    float x=(1/b);
+    r=pow(a,x);
+
+return r;
+}
+int factorial(int x){
+    int i,r=1;
+    for(i=x; i>0; i--)
+    {
+        r=r*i;
+    }
+    return r;
+}
+
+
+int main()
+{
+
+    printf("***************************              Special Operators\n");
+    printf("|                         |     1.Remainder= '%%'        2.Power= 'p'\n");
+    printf("|      CALCULATOR         |     3.Root= 'r'             4.Factorial= 'f'\n");
+    printf("|                         |     5.Log= 'l'\n");
+    printf("***************************\n");
+
+    while(1)
+    {
+    char op;
+    char con;
+    double v1,v2;
+    double result=0;
+
+    printf("Enter a value: ");
+    scanf("%lf",&v1);
+    printf("Chose a operator: ");
+    scanf(" %c",&op);
+    if(op!='f'){
+        printf("Enter second value: ");
+        scanf("%lf",&v2);
+    }
+
+
+    if(op=='+')
+    {
+        result=v1+v2;
+    }
+    else if(op=='-')
+    {
+        result=v1-v2;
+    }
+    else if(op=='*')
+    {
+        result=v1*v2;
+    }
+    else if(op=='/')
+    {
+        result=v1/v2;
+    }
+    else if(op=='%'){
+        result=(int) v1 % (int) v2;
+    }
+    else if(op=='p'){
+        result=pow(v1,v2);
+    }
+    else if(op=='r'){
+        result=root(v1, v2);
+    }
+    else if(op=='f')
+    {
+        result=factorial(v1);
+    }
+    printf("Result = %.2lf\n",result);
+
+    printf("\nDo you want to continue? (y/n): ");
+    scanf(" %c",&con);
+
+    if(con=='N' || con=='n'){
+        break;
+    }
+    else{
+        continue;
+    }
+    }
+    return 0;
+}
+
+
